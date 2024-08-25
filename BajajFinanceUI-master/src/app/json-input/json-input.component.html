@@ -1,0 +1,15 @@
+<div>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter JSON Data</mat-label>
+      <textarea matInput [(ngModel)]="jsonData" placeholder="Enter JSON data here" rows="5"></textarea>
+      <mat-error *ngIf="jsonError">{{jsonError}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="submitData()">Submit</button>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Data Type</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+        <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  

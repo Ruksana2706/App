@@ -1,0 +1,13 @@
+<div *ngIf="response">
+    <h3>Response</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Response</mat-label>
+      <mat-select [(ngModel)]="selectedOption" (selectionChange)="filterResponse()">
+        <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="filteredResponse">
+      <pre>{{filteredResponse | json}}</pre>
+    </div>
+  </div>
+  
